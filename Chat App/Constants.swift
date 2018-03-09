@@ -8,8 +8,14 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 
 struct Constants {
     static let dbRef = Database.database().reference()
-    static let dcChats = dbRef.child("messages")
+    static let dbChats = dbRef.child("messages")
+    static let dbmedias = dbRef.child("images")
+    
+    static let storageRef = Storage.storage().reference(forURL : "gs://flash-chat-cf31a.appspot.com")
+    static let imageStorageRef = storageRef.child("images")
+    static let videosStorageRef = storageRef.child("videos")
 }
